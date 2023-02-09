@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">My To Do List</h1>
+      <div class="control" id="controls">
+        <input class="input" type="text" placeholder="Please write your new task" />
+        <button class="btn add" type="button" data-add>Add</button>
+      </div>
+      <div class="boxes" id="boxes">
+        <ol class="list">
+          <li >
+            <div class="task"><p class="text">
+              My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <button class="btn completed" type="button" data-completed>
+              <svg class="icon-completed" width="20" height="20">
+                <use href="./img/icons.svg#checkmark2"></use>
+              </svg>
+            </button>
+            <button class="btn delete" type="button" data-delete>
+              <svg class="icon-delete" width="20" height="20">
+                <use href="./img/icons.svg#bin"></use>
+              </svg>
+            </button></div>
+          </li>
+          <li >
+            <div class="task"><p class="text">
+              My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <button class="btn completed" type="button" data-completed>
+              <svg class="icon-completed" width="20" height="20">
+                <use href="./img/icons.svg#checkmark2"></use>
+              </svg>
+            </button>
+            <button class="btn delete" type="button" data-delete>
+              <svg class="icon-delete" width="20" height="20">
+                <use href="./img/icons.svg#bin"></use>
+              </svg>
+            </button></div>
+          </li>
+        </ol>
+              </div>
+    </div>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

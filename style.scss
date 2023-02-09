@@ -1,0 +1,72 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  border: none;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.container {
+  padding: 20px;
+  margin: 50px auto;
+  width: 400px;
+  outline: solid red;
+}
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.control {
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  height: 35px;
+  width: 250px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  background: rgb(161, 200, 161);
+}
+.text {
+  font-size: 16px;
+  line-height: 1;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.add {
+  width: 60px;
+}
+.completed {
+  margin-left: auto;
+}
