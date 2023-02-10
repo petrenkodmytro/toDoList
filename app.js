@@ -3,33 +3,69 @@ function getRandomHexColor() {
 }
 
 const btnCreateRef = document.querySelector("button[data-add]");
-const btnDestroyRef = document.querySelector("button[data-delete]");
+const btnClearRef = document.querySelector("button[data-clear]");
+const btnCompletedRef = document.querySelector("button[data-action='completed']");
+const btnDeleteRef = document.querySelector("button[data-action='delete']");
 const input = document.querySelector("input");
-const divBoxes = document.querySelector("#boxes");
+const taskListRef = document.querySelector(".list");
+const textEmpty = document.querySelector(".text-empty");
 
-//функцію destroyBoxes(), яка очищає вміст div#boxes
-btnDestroyRef.addEventListener("click", () => {
-  divBoxes.innerHTML = "";
+//функцію destroyBoxes(), яка очищає вміст div#boxes, видаляє всі таски
+btnClearRef.addEventListener("click", () => {
+  taskListRef.innerHTML = "";
+  textEmpty.classList.remove("hidden");
 });
 
 btnCreateRef.addEventListener("click", (event) => {
-  //отримаємо значення з input
-  let markup = createBoxes(input.value);
-  // divBoxes.insertAdjacentHTML("beforeend", markup);
-  divBoxes.append(markup);
+  if (input.value.trim() === "") {
+    return alert("Please write your new task");
+  }
+  //отримаємо значення task з input
+  let markup = createTask(input.value);
+  taskListRef.insertAdjacentHTML("beforeend", markup);
+  input.value = "";
+  input.focus();
+  if (taskListRef.children.length > 0) {
+    textEmpty.classList.add("hidden");
+  }
 });
 
-function createBoxes(amount) {
-  let stringMarkup = "";
-  for (let i = 1; i <= amount; i += 1) {
-    stringMarkup += `<div class="item" style="background: ${getRandomHexColor()}; width: ${30 + 10 * i}px; height: ${30 + 10 * i}px">${i}</div>`;
-  }
+taskListRef.addEventListener("click", completedTask);
+
+taskListRef.addEventListener("click", deleteTask);
+
+function createTask(taskName) {
+  let stringMarkup = `<li >
+  <div class="task"><p class="text">
+    ${taskName}
+  </p>
+  <button class="btn completed" type="button" data-action="completed">
+    <svg class="icon-completed" width="20" height="20">
+      <use href="./img/icons.svg#checkmark2"></use>
+    </svg>
+  </button>
+  <button class="btn delete" type="button" data-action="delete">
+    <svg class="icon-delete" width="20" height="20">
+      <use href="./img/icons.svg#bin"></use>
+    </svg>
+  </button></div>
+</li>`;
   return stringMarkup;
 }
 
-// 1.Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку Очистити, колекція елементів очищається.
-// 2.Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки <div>, скільки вказано в amount і додає їх у div#boxes.
-// 3.Розміри найпершого <div> - 30px на 30px.
-// 4.Кожен елемент після першого повинен бути ширшим і вищим від попереднього на 10px.
-// 5.Всі елементи повинні мати випадковий колір фону у форматі HEX. Використовуй готову функцію getRandomHexColor для отримання кольору.
-// 6.Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
+function completedTask(event) {
+  if (event.target.dataset.action === "completed") {
+    const perentNod = event.target.closest(".task");
+    perentNod.classList.toggle("completed-task");
+  }
+}
+
+function deleteTask(event) {
+  if (event.target.dataset.action === "delete") {
+    const perentNodLi = event.target.closest("li");
+    perentNodLi.remove();
+  }
+  if (taskListRef.children.length === 0) {
+    textEmpty.classList.remove("hidden");
+  }
+}

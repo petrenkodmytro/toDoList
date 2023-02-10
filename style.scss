@@ -30,11 +30,15 @@ button {
   opacity: 0;
   pointer-events: none;
 }
+svg {
+  pointer-events: none;
+}
 .container {
   padding: 20px;
   margin: 50px auto;
-  width: 400px;
-  outline: solid red;
+  width: 380px;
+  border: solid 1px rgb(194, 240, 157);
+  border-radius: 20px;
 }
 .title {
   text-align: center;
@@ -46,13 +50,24 @@ button {
 }
 .input {
   height: 35px;
-  width: 250px;
+  width: 200px;
 }
+.text-empty{
+  margin-top: 20px;
+  }
+  .hidden{
+    display: none;
+  }
 .task {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
-  background: rgb(161, 200, 161);
+  padding: 5px;
+  background: hsl(120, 27%, 89%);
+}
+.completed-task{
+  background: rgb(171, 149, 247);
+
 }
 .text {
   font-size: 16px;
@@ -63,10 +78,18 @@ button {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  border: solid 1px;
+  border-radius: 10px;
+  background: transparent;
+  &:hover,
+  &:focus {
+    background: yellow;
+  }
 }
 .add {
   width: 60px;
 }
 .completed {
   margin-left: auto;
+  margin-right: 5px;
 }

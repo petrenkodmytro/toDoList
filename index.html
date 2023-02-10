@@ -14,41 +14,28 @@
       <div class="control" id="controls">
         <input class="input" type="text" placeholder="Please write your new task" />
         <button class="btn add" type="button" data-add>Add</button>
+        <button class="btn clear" type="button" data-clear>Clear All</button>
       </div>
       <div class="boxes" id="boxes">
+        <p class="text-empty">To do list is empty...</p>
         <ol class="list">
-          <li >
-            <div class="task"><p class="text">
-              My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <button class="btn completed" type="button" data-completed>
-              <svg class="icon-completed" width="20" height="20">
-                <use href="./img/icons.svg#checkmark2"></use>
-              </svg>
-            </button>
-            <button class="btn delete" type="button" data-delete>
-              <svg class="icon-delete" width="20" height="20">
-                <use href="./img/icons.svg#bin"></use>
-              </svg>
-            </button></div>
-          </li>
-          <li >
-            <div class="task"><p class="text">
-              My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <button class="btn completed" type="button" data-completed>
-              <svg class="icon-completed" width="20" height="20">
-                <use href="./img/icons.svg#checkmark2"></use>
-              </svg>
-            </button>
-            <button class="btn delete" type="button" data-delete>
-              <svg class="icon-delete" width="20" height="20">
-                <use href="./img/icons.svg#bin"></use>
-              </svg>
-            </button></div>
-          </li>
+          <!-- <li>
+            <div class="task">
+              <p class="text">My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <button class="btn completed" type="button" data-action="completed">
+                <svg class="icon-completed" width="20" height="20">
+                  <use href="./img/icons.svg#checkmark2"></use>
+                </svg>
+              </button>
+              <button class="btn delete" type="button" data-action="delete">
+                <svg class="icon-delete" width="20" height="20">
+                  <use href="./img/icons.svg#bin"></use>
+                </svg>
+              </button>
+            </div>
+          </li> -->
         </ol>
-              </div>
+      </div>
     </div>
     <script src="./app.js" type="module"></script>
   </body>
