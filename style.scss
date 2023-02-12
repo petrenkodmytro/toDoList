@@ -7,25 +7,27 @@ h6,
 p {
   margin: 0;
 }
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-
 ul,
 ol {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
-
 button {
   display: block;
   cursor: pointer;
   border: none;
 }
-
+body {
+  height: 100vh;
+  background: rgb(34, 137, 195);
+  background: no-repeat linear-gradient(318deg, rgba(34, 137, 195, 1) 0%, rgba(158, 253, 45, 1) 100%);
+}
 .is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -37,59 +39,82 @@ svg {
   padding: 20px;
   margin: 50px auto;
   width: 380px;
-  border: solid 1px rgb(194, 240, 157);
+  border: solid 2px rgb(33, 192, 46);
+  background-color: #f1efc5;
   border-radius: 20px;
+  box-shadow: 3px 5px 14px 5px rgba(30, 49, 255, 0.35);
 }
 .title {
   text-align: center;
   margin-bottom: 20px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -2px 0px 11px rgba(16, 3, 241, 0.15);
 }
 .control {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 .input {
   height: 35px;
   width: 200px;
+  border-radius: 5px;
 }
-.text-empty{
-  margin-top: 20px;
-  }
-  .hidden{
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 .task {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
   padding: 5px;
-  background: hsl(120, 27%, 89%);
 }
-.completed-task{
-  background: rgb(171, 149, 247);
-
+.completed-task {
+  opacity: 0.2;
+  background: hsl(120, 27%, 89%);
+  & p {
+    text-decoration: line-through;
+  }
 }
 .text {
+  display: inline-block;
   font-size: 16px;
   line-height: 1;
 }
+.text-empty {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc, 1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee, 4px 3px 1px #cccccc, 3px 4px 1px #eeeeee,
+    5px 4px 1px #cccccc, 4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee, 7px 6px 1px #cccccc, 2px 2px 2px rgba(16, 3, 241, 0);
+}
+// ---------button----------
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
-  border: solid 1px;
+  // border: solid 2px;
   border-radius: 10px;
   background: transparent;
   &:hover,
   &:focus {
-    background: yellow;
+    box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e, -2px -2px 24px 6px rgba(29, 255, 86, 0);
   }
 }
 .add {
   width: 60px;
+  background-color: hsl(108, 67%, 75%);
+}
+.clear {
+  background-color: rgb(212, 211, 204);
 }
 .completed {
   margin-left: auto;
   margin-right: 5px;
+}
+.icon-delete {
+  fill: rgb(245, 108, 108);
+}
+.icon-completed {
+  fill: rgb(27, 196, 97);
 }

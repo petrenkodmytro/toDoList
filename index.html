@@ -17,24 +17,11 @@
         <button class="btn clear" type="button" data-clear>Clear All</button>
       </div>
       <div class="boxes" id="boxes">
-        <p class="text-empty">To do list is empty...</p>
-        <ol class="list">
-          <!-- <li>
-            <div class="task">
-              <p class="text">My new task Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn completed" type="button" data-action="completed">
-                <svg class="icon-completed" width="20" height="20">
-                  <use href="./img/icons.svg#checkmark2"></use>
-                </svg>
-              </button>
-              <button class="btn delete" type="button" data-action="delete">
-                <svg class="icon-delete" width="20" height="20">
-                  <use href="./img/icons.svg#bin"></use>
-                </svg>
-              </button>
-            </div>
-          </li> -->
-        </ol>
+        <div class="empty">
+          <p class="text-empty">To do list is empty...</p>
+          <img src="./img/empty-to-do-list.avif" alt="empty-to-do-list" />
+        </div>
+        <ul class="list"></ul>
       </div>
     </div>
     <script src="./app.js" type="module"></script>
