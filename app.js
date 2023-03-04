@@ -13,7 +13,7 @@ let tasks = [];
 if (localStorage.getItem("tasks")) {
   console.log(localStorage.getItem("tasks"));
   tasks = JSON.parse(localStorage.getItem("tasks"));
-  console.log(tasks);
+  
   // проверка на пустой массив
   if (tasks.length > 0) {
     textEmpty.classList.add("hidden");
